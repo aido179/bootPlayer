@@ -15,22 +15,10 @@
 
 
     <div class="container">
-      <div class="jumbotron">
-        <h2>bootPlayer</h2>
-        <p><a href="https://github.com/iainhouston/bootstrap3_player/blob/master/index.html">index.html</a>
-         shows the very simple html needed to include bootstrap3_player in your page.</p>
-        <a role="button" class="btn btn-primary btn-lg" href="https://github.com/iainhouston/bootstrap3_player">
-          <span class="glyphicon glyphicon-download" aria-hidden="true"></span> GitHub
-      </a>
-      </div>
-      <!-- /jumbotron -->
       <div class="row col-md-8 col-md-offset-2 col-xs-12">
-
-
-
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Example: Audio with data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <audio controls
-          data-info-album-art="images/cover.png"
+          data-info-album-art="images/cover.jpg"
           data-info-album-title="The Cub"
           data-info-artist="Aidan Breen"
           data-info-label="Independent"
@@ -40,7 +28,13 @@
           data-track-1-src-mp3="music/1.mp3"
           data-track-1-title="The Cub"
           data-track-2-src-mp3="music/2.mp3"
-          data-track-2-title="Playing With Wolves">
+          data-track-2-title="Playing With Wolves"
+          data-track-3-src-mp3="music/3.mp3"
+          data-track-3-title="The End"
+          data-track-4-src-mp3="music/4.mp3"
+          data-track-4-title="Darken Slow"
+          data-track-5-src-mp3="music/5.mp3"
+          data-track-5-title="Precious Mettle">
           <source id="src-ogg" type="audio/ogg" />
           <source id="src-mp3" type="audio/mpeg" />
           An html5-capable browser is required to play this audio.
@@ -48,15 +42,29 @@
     <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
     <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
 
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Example: Audio with no data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!--
+    <h1> Playlist without Album Data</h1>
+    <audio controls
+      data-track-1-src-mp3="music/1.mp3"
+      data-track-1-title="The Cub"
+      data-track-2-src-mp3="music/2.mp3"
+      data-track-2-title="Playing With Wolves"
+      data-track-3-src-mp3="music/3.mp3"
+      data-track-3-title="The End"
+      data-track-4-src-mp3="music/4.mp3"
+      data-track-4-title="Darken Slow"
+      data-track-5-src-mp3="music/5.mp3"
+      data-track-5-title="Precious Mettle">
+      <source id="src-ogg" type="audio/ogg" />
+      <source id="src-mp3" type="audio/mpeg" />
+      An html5-capable browser is required to play this audio.
+    </audio>
+  -->
+
+
+
       </div><!-- /row -->
-      <div class="row col-md-6 col-md-offset-3 col-xs-12">
-
-
-    <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
-    <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
-
-
-      </div>
       <!-- /row -->
       <footer class="row col-md-6 col-md-offset-3 col-xs-12">
         <div class="list-group">

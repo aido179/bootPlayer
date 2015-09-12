@@ -329,7 +329,7 @@ test.
 
         var addAlbumArt = function () {
             var albumArt = document.createElement('img');
-            $(albumArt).addClass('thumbnail');
+            $(albumArt).addClass('img-responsive');
             $(albumArt).attr('src', $(song).data('infoAlbumArt'));
             $(data_sec).append(albumArt);
         }; // addAlbumArt
@@ -406,7 +406,6 @@ test.
           var head = document.createElement('td');
           var data = document.createElement('td');
           var butt = document.createElement('td');
-          console.log(num);
           $(butt).attr("data-track-num", num);
           $(row).addClass("playerTrackRow");
           $(row).on('click',function(el) {

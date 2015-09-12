@@ -1,95 +1,68 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>bootstrap-player : Live Demo</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.no-icons.min.css" type="text/css" rel="stylesheet">
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" type="text/css" rel="stylesheet">
-		<link href="/bootstrap-player/css/style.css" type="text/css" rel="stylesheet">
-	</head>
-	<body>
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-reorder"></i></button>
-					<ul class="nav">
-						<li class="active">
-							<a class="brand" href="/bootstrap-player/"><i class="icon-home"></i> bootstrap-player</a>
-						</li>
-					</ul>
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<li>
-								<a href="/bootstrap-player/demo"><i class="icon-play"></i> Live Demo</a>
-							</li>
-						</ul>
-						<ul class="nav pull-right" >
-							<li class="nav-primary">
-								<a href="https://github.com/WilliamRandol/bootstrap-player"><i class="icon-github"></i> GitHub Page</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<header>
-			<div class="container">
-				<h1 id="project_title">Bootstrap-player</h1>
-				<p id="project_tagline">A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap</p>
-				<div class="btn-toolbar">
-					<div class="btn-group pull-right">
-					  <a class="btn dropdown-toggle btn-success" data-toggle="dropdown">
-						<i class="icon-download-alt"></i>&nbsp; Download &nbsp;<span class="caret"></span>
-					  </a>
-					  <ul class="dropdown-menu">
-						<li>
-							<a href="https://github.com/WilliamRandol/bootstrap-player/zipball/master">.zip</a>
-						</li>
-						<li>
-							<a href="https://github.com/WilliamRandol/bootstrap-player/tarball/master">.tar.gz</a>
-						</li>
-					  </ul>
-					</div>
-				</div>
-			</div>
-		</header>
-		<section class="container">
-			<section class="row">
-				<div class="span12">
-					<div id="main_content_wrap" class="outer">
-						<section id="main_content" class="inner">
-							<h1>bootstrap-player</h1>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>bootPlayer</title>
+    <meta name="viewport" >
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="css/player.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">bootPlayer</h1>
+      <h2 class="project-tagline">A multi-track HTML5 Audio Player with Twitter Bootstrap and jQuery</h2>
+      <a href="https://github.com/aido179/bootPlayer" class="caymanbtn">View on GitHub</a>
+      <a href="https://github.com/aido179/bootPlayer/zipball/master" class="caymanbtn">Download .zip</a>
+      <a href="https://github.com/aido179/bootPlayer/tarball/master" class="caymanbtn">Download .tar.gz</a>
+    </section>
 
-							<p>A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap</p>
+    <section class="main-content">
+      <h1>bootstrap-player</h1>
+      <p>A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap</p>
 
-							<h2><a href="http://williamrandol.github.com/bootstrap-player/demo/">Live Demo</a></h2>
 
-							<p>Requires:</p>
+      <audio controls
+          data-info-album-art="images/cover.jpg"
+          data-info-album-title="The Cub"
+          data-info-artist="Aidan Breen"
+          data-info-label="Independent"
+          data-info-year="2015"
+          data-info-att="Music: Aidan Breen."
+          data-info-att-link="https://github.com/aido179"
+          data-track-1-src-mp3="music/1.mp3"
+          data-track-1-title="The Cub"
+          data-track-2-src-mp3="music/2.mp3"
+          data-track-2-title="Playing With Wolves"
+          data-track-3-src-mp3="music/3.mp3"
+          data-track-3-title="The End"
+          data-track-4-src-mp3="music/4.mp3"
+          data-track-4-title="Darken Slow"
+          data-track-5-src-mp3="music/5.mp3"
+          data-track-5-title="Precious Mettle">
+          <source id="src-ogg" type="audio/ogg" />
+          <source id="src-mp3" type="audio/mpeg" />
+          An html5-capable browser is required to play this audio.
+        </audio>
 
-							<ul>
-								<li>Twitter Bootstrap - <a href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a></li>
-								<li>jQuery - <a href="http://jquery.com/">http://jquery.com/</a></li>
-							</ul>
-							<p>Firefox Support Requires</p>
-							<ul>
-								<li>html5slider - <a href="https://github.com/fryn/html5slider/">https://github.com/fryn/html5slider/</a></li>
-							</ul>
 
-							<p>Additional Features When Using</p>
-							<ul>
-								<li>Font Awesome - <a href="http://fortawesome.github.com/Font-Awesome/">http://fortawesome.github.com/Font-Awesome/</a></li>
-							</ul>
-						</section>
-					</div>
-				</div>
-			</section>
-		</section>
-		<footer>
-			<div class="container">
-				<p class="copyright">Bootstrap-player maintained by <a href="https://github.com/WilliamRandol">WilliamRandol</a></p>
-			</div>
-		</footer>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
-	</body>
+
+      <p>Requires:</p>
+      <ul>
+        <li>Twitter Bootstrap - http://twitter.github.com/bootstrap/</li>
+        <li>jQuery - http://jquery.com/</li>
+      </ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/aido179/bootPlayer">bootPlayer</a> is maintained by <a href="https://github.com/aido179">Aidan Breen</a>.</span>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+  </body>
 </html>

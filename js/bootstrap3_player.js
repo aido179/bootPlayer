@@ -1,33 +1,65 @@
+/*
+css, title for currently playing track
+test.
 /* global jQuery */
 (function ($) {'use strict';
-    $('audio[controls]').before(function () {
 
+    $('audio[controls]').before(function () {
         var song = this;
         song.controls = false;
+
+        //Get all track titles and sources
+        var trk = 1;
+        var currentTrack = 1;
+        var numTracks = 0;
+        var tracks = {};
+        while($(song).data("track-"+trk+"-src-mp3") !== undefined){
+          tracks[trk] = {
+            'title': $(song).data("track-"+trk+"-title"),
+            'srcMp3': $(song).data("track-"+trk+"-src-mp3"),
+            'srcOgg': $(song).data("track-"+trk+"-src-mp3")
+          };
+          trk++;
+        }
+        numTracks = trk-1;
+        //Set up first track...
+        $("#src-mp3").attr("src", tracks[1].srcMp3);
+        $("#src-ogg").attr("src", tracks[1].srcOgg);
+        $(song)[0].pause();
+        $(song)[0].load();
+
+        //Allow tracks to continuously play...
+        $(song).on("ended", function(){
+          if (currentTrack < numTracks){
+            changeTrack(++currentTrack);
+            setInterval(function () {$(song)[0].play();}, 50);
+          }else{
+            currentTrack = 1;
+            changeTrack(currentTrack);
+          }
+
+        });
+
 
         var player_box = document.createElement('div');
         $(player_box).addClass($(song).attr('class') + ' well container-fluid playa');
 
         var data_sec = document.createElement('section');
-        $(data_sec).addClass('collapsing center-block row col-sm-12');
+        $(data_sec).addClass('center-block row col-sm-12');
 
-        var toggle_holder = document.createElement('div');
-        $(toggle_holder).addClass('btn-group center-block row col-sm-12');
-
-        var data_toggle = document.createElement('button');
-        $(data_toggle).html('<i class="glyphicon glyphicon-align-justify" style="top:-3px"></i>');
-        $(data_toggle).addClass('btn btn-default btn-lg btn-block row col-sm-12');
-        $(data_toggle).attr('style', 'opacity:0.3');
-        $(data_toggle).click(function () {$(data_sec).collapse('toggle'); });
-        $(data_toggle).attr('title', 'Details');
-        $(data_toggle).tooltip({'container': 'body', 'placement': 'top', 'html': true});
-        $(toggle_holder).append(data_toggle);
+        var tracks_sec = document.createElement('section');
+        $(tracks_sec).addClass('center-block row col-sm-12');
 
         var data_table = document.createElement('table');
         $(data_table).addClass('table table-condensed');
 
         var player = document.createElement('section');
         $(player).addClass('btn-group  center-block row  col-sm-12');
+
+        var play = document.createElement('button');
+
+        var track_table = document.createElement('table');
+        $(track_table).addClass('table table-condensed');
 
         var load_error = function () {
             // console.log('error');
@@ -40,8 +72,7 @@
         }; // load_error
 
         var addPlay = function () {
-            var play = document.createElement('button');
-            $(play).addClass('btn  btn-default disabled col-sm-1');
+            $(play).addClass('btn  btn-default disabled col-sm-1 play-btn');
 
             play.setPlayState = function (toggle) {
                 $(play).removeClass('disabled');
@@ -60,9 +91,9 @@
             }; // setPlayState
 
             // media events from the audio element will trigger rebuilding the play button
-            $(song).on('play', function () {play.setPlayState('pause'); });
-            $(song).on('canplay', function () {play.setPlayState('play'); });
-            $(song).on('pause', function () {play.setPlayState('play'); });
+            $(song).on('play', function () {play.setPlayState('pause');});
+            //$(song).on('canplay', function () {play.setPlayState('play'); });
+            $(song).on('pause', function () {play.setPlayState('play');});
 
             var timeout = 0;
 
@@ -99,10 +130,10 @@
                 bg += ', rgba(223, 240, 216, 1) ' + ((song.currentTime / song.duration) * 100) + '%';
                 bg += ', rgba(223, 240, 216, 0) ' + ((song.currentTime / song.duration) * 100) + '%';
                 for (i = 0; i < song.buffered.length; i++) {
-                    if (song.buffered.end(i) > song.currentTime && 
-                        isNaN(song.buffered.end(i)) === false && 
+                    if (song.buffered.end(i) > song.currentTime &&
+                        isNaN(song.buffered.end(i)) === false &&
                         isNaN(song.buffered.start(i)) === false) {
-                        
+
                         if (song.buffered.end(i) < song.duration) {
                             bufferedend = ((song.buffered.end(i) / song.duration) * 100);
                         } else {
@@ -315,9 +346,9 @@
         }; // addInfo
 
         var addData = function () {
-            // jslint will complain about our use of `typeof` but 
-            // it's the only way not to raise an error by referencing 
-            // a nnon-existent data-* variable 
+            // jslint will complain about our use of `typeof` but
+            // it's the only way not to raise an error by referencing
+            // a nnon-existent data-* variable
             if (typeof ($(song).data('infoAlbumArt')) !== 'undefined') {
                 addAlbumArt();
             }
@@ -338,7 +369,6 @@
             }
             if ($(data_table).html() !== '') {
                 $(data_sec).append(data_table);
-                $(player_box).append(toggle_holder);
                 $(player_box).append(data_sec);
             }
         }; // addData
@@ -362,6 +392,61 @@
             $(player_box).append(player);
         }; // addPlayer
 
+        var changeTrack = function(trackNum){
+          currentTrack = trackNum;
+          $("#src-mp3").attr("src", tracks[trackNum].srcMp3);
+          $("#src-ogg").attr("src", tracks[trackNum].srcOgg);
+          song.pause();
+          $(song)[0].load();
+          song.play();
+        };
+
+        var addTrack = function(num, title){
+          var row = document.createElement('tr');
+          var head = document.createElement('td');
+          var data = document.createElement('td');
+          var butt = document.createElement('td');
+          console.log(num);
+          $(butt).attr("data-track-num", num);
+          $(row).addClass("playerTrackRow");
+          $(row).on('click',function(el) {
+            changeTrack(num);
+          });
+          $(head).html("<strong>"+num+"</strong>");
+          $(data).html(title);
+          //$(butt).html('<i class="glyphicon glyphicon-play text-muted"></i>');
+          $(butt).addClass("playerTrackRowPlayIcon");
+          $(row).append(head);
+          $(row).append(data);
+          $(row).append(butt);
+          $(track_table).append(row);
+        };
+
+        var addTracks = function(){
+          //loop through all tracks and add them to the track table
+          var i = 1;
+          for(var track in tracks) {
+            if(tracks.hasOwnProperty(track)){
+              addTrack(i,tracks[track].title);
+            }
+            i++;
+          }
+          //show / hide play icon
+          $(song).on('play', function () {
+            $(".playerTrackRowPlayIcon").empty();
+            $('.playerTrackRowPlayIcon[data-track-num="'+currentTrack+'"]').html('<i class="glyphicon glyphicon-play text-muted"></i>');
+          });
+          $(song).on('pause', function () {$(".playerTrackRowPlayIcon").empty();});
+
+
+          $(track_table).first().addClass("table-hover");
+          if ($(track_table).html() !== '') {
+              $(tracks_sec).append(track_table);
+          }
+          $(player_box).append(tracks_sec);
+
+        }; //add tracks
+
         var addAttribution = function () {
             var attribution = document.createElement('div');
             $(attribution).addClass('row col-sm-10 col-sm-offset-1');
@@ -380,6 +465,7 @@
         var fillPlayerBox = function () {
             addData();
             addPlayer();
+            addTracks();
             if (typeof ($(song).data('infoAtt')) !== 'undefined') {
                 addAttribution();
             }

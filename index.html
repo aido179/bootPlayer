@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ Required CSS files ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap3_player.css" rel="stylesheet">
     <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
     <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
@@ -16,7 +16,7 @@
 
     <div class="container">
       <div class="jumbotron">
-        <h2>bootstrap3_player</h2>
+        <h2>bootPlayer</h2>
         <p><a href="https://github.com/iainhouston/bootstrap3_player/blob/master/index.html">index.html</a>
          shows the very simple html needed to include bootstrap3_player in your page.</p>
         <a role="button" class="btn btn-primary btn-lg" href="https://github.com/iainhouston/bootstrap3_player">
@@ -30,18 +30,20 @@
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Example: Audio with data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <audio controls
-          data-info-album-art="https://farm9.staticflickr.com/8642/16106988340_058071cdbe_z.jpg"
-          data-info-album-title="8874"
-          data-info-artist="Iain Houston and Felix Gibbons"
-          data-info-title="BeBop Aliens"
+          data-info-album-art="images/cover.png"
+          data-info-album-title="The Cub"
+          data-info-artist="Aidan Breen"
           data-info-label="Independent"
-          data-info-year="2005"
-          data-info-att="Music: Iain Houston and Felix Gibbons."
-          data-info-att-link="https://github.com/iainhouston">
-          <source src="http://playerdemo.iainhouston.com/tests/BeBopAliens.ogg" type="audio/ogg" />
-          <source src="http://playerdemo.iainhouston.com/tests/BeBopAliens.mp3" type="audio/mpeg" />
-          <a href="http://playerdemo.iainhouston.com/tests/BeBopAliens.mp3">BeBopAliens</a>
-          An html5-capable browser is required to play this audio. 
+          data-info-year="2015"
+          data-info-att="Music: Aidan Breen."
+          data-info-att-link="https://github.com/aido179"
+          data-track-1-src-mp3="music/1.mp3"
+          data-track-1-title="The Cub"
+          data-track-2-src-mp3="music/2.mp3"
+          data-track-2-title="Playing With Wolves">
+          <source id="src-ogg" type="audio/ogg" />
+          <source id="src-mp3" type="audio/mpeg" />
+          An html5-capable browser is required to play this audio.
         </audio>
     <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
     <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
@@ -49,13 +51,7 @@
       </div><!-- /row -->
       <div class="row col-md-6 col-md-offset-3 col-xs-12">
 
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Example: Audio with no additional data ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <audio controls>
-          <source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
-          <source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
-          <a href="http://www.w3schools.com/html/horse.mp3">horse</a>
-          An html5-capable browser is required to play this audio. 
-        </audio>
+
     <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
     <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
 
@@ -65,17 +61,17 @@
       <footer class="row col-md-6 col-md-offset-3 col-xs-12">
         <div class="list-group">
           <a  class="list-group-item" href="https://www.flickr.com/photos/13481006@N08/sets/72157650312130202/">
-          Dorset Image from  Iain Houston</a>     
+          Built upon bootstrap3_player by Iain Houston</a>
           <a  class="list-group-item" href="http://glyphicons.com/">
           Glyphicons.com provide the Halflings glyphs font that comes free of cost with Bootstrap 3</a>
         </div>
         <!-- /list-group -->
       </footer>
-      
+
 
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ Required Javascript files ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
       <script src="js/bootstrap3_player.js"></script>
       <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->
       <!-- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^  -->

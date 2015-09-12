@@ -1,7 +1,7 @@
-bootstrap3_player
+bootPlayer
 ================
 
-An HTML5 Audio Player Skin For Twitter Bootstrap 3
+A multi-track HTML5 Audio Player with Twitter Bootstrap and jQuery
 
 #### Requires:
 
@@ -13,7 +13,7 @@ An HTML5 Audio Player Skin For Twitter Bootstrap 3
 Clone or download this repo; then open the included [`index.html`](index.html) file:
 -  with **your browser** to:  
     -  see a live demo on your local machine
-    -  compare it with the [screenshots or live demo](#screenshots) below
+    -  compare it with the [screenshot or live demo](#screenshots) below
 - with your [text editor](index.html) to:
     -  see all the css and js files you need to link to
     -  see the `<audio>`  tags in use
@@ -36,10 +36,6 @@ For some info on the differences between `bootPlayer` and `bootstrap-player`, [s
 
 #### <a name="screenshots">Screenshots and Live demo
 
-[See a live demo](http://playerdemo.iainhouston.com)
+[See a live demo](http://aido179.github.io/bootPlayer/)
 
--  Audio with no additional data ![](screenshots/bPlayer_demo_data_no.png?raw=true)
-
--  Audio with data - collapsed ![](screenshots/bPlayer_demo_data_0.png?raw=true)
-
--  Audio with data - expanded ![](screenshots/bPlayer_demo_data_1.png?raw=true)
+-  Audio with data ![](screenshots/playerDemo.png?raw=true)
